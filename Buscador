@@ -1,0 +1,29 @@
+#By Victor
+
+# Read
+while True:
+
+    qarq = input("Escreva o nome do arquivo ou o endereço: ")
+
+    arq = open(qarq, 'r')
+
+    ler = arq.read()
+
+# Search 
+
+    print("\nEscreva a string corretamente")
+    pq = input("palavra desejada: ")
+
+    if pq in ler:
+        print("\nContém!\n")
+    else:
+        print("\nNão contém!\n")
+
+# Loop
+
+    cond = input("Deseja continuar?   S\\N")
+
+    if cond != 'S' and cond != 's':
+        break
+
+
