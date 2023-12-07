@@ -1,29 +1,36 @@
 #By Victor
 
 # Read
-while True:
 
-    qarq = input("Escreva o nome do arquivo ou o endereço: ")
+qarq = input("Escreva o nome do arquivo ou o endereço: ")
 
-    arq = open(qarq, 'r')
+arq = open(qarq, 'r')
 
-    ler = arq.read()
+ler = arq.read()
 
 # Search 
 
-    print("\nEscreva a string corretamente")
-    pq = input("palavra desejada: ")
+while True:
 
-    if pq in ler:
+    pq = input("\nString desejada: ")
+
+    if pq in ler.strip().split():
         print("\nContém!\n")
     else:
-        print("\nNão contém!\n")
+        print("\nNão contém ou você digitou errado!\n")
+
+# Count
+
+    cnt = ler.strip().split().count(pq)
+    if cnt == 1:
+        print("Existe", cnt, "repetição dessa string\n")
+    else:
+        print("Existem", cnt, "repetições dessa string\n")
 
 # Loop
 
-    cond = input("Deseja continuar?   S\\N")
+    cond = input("Deseja continuar?  S\\N \n\n")
 
     if cond != 'S' and cond != 's':
+        print("\nProcesso encerrado\n")
         break
-
-
